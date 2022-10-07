@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:56:37 by ebennace          #+#    #+#              #
-#    Updated: 2022/10/07 18:05:36 by ebennace         ###   ########.fr        #
+#    Updated: 2022/10/07 18:29:57 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,8 @@ NAME = philosopher
 
 # === File && Header === #
 SRCS		= 	main.c \
+				source/init/init.c \
+				source/verbose/verbose_philo.c \
 
 # ==== Template ==== #
 TEMPLATE = source/header/header.txt

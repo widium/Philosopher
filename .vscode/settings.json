@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "philosopher.h": "c"
+        "philosopher.h": "c",
+        "unistd.h": "c",
+        "class.h": "c"
     }
 }
