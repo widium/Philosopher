@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:14:03 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/07 18:33:43 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/10 16:00:49 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,16 @@ t_philo *init_philo(float eat_time, float sleep_time, float die_time)
     philo->next = NULL;
     philo->prev = NULL;
     return (philo);
+}
+
+t_env *init_env(void)
+{
+    t_env *env;
+
+    env = (t_env *)malloc(sizeof(t_env));
+    if (!env)
+        return (NULL);
+    env->first_philo = NULL;
+    return (env);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:09:13 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/07 18:27:37 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/10 15:54:41 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,12 @@ typedef	struct s_philo
     struct s_philo *prev;
 
 }   t_philo;
+
+
+typedef struct s_env
+{
+    t_philo *first_philo;
+
+}   t_env;
 
 #endif
