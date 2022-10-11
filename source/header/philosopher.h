@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/11 12:14:51 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:13:02 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,19 @@ void print_error_parsing(void);
 void print_env(t_env *env);
 void print_philo(t_philo *philo);
 void print_all_philo(t_env *env);
+
+
+
+int is_first_philo(t_env *env, t_philo *philo);
+int is_last_philo(t_philo *philo);
+
+t_philo *get_first_philo(t_env *env);
+
+
+
+void remove_all(t_env *env);
+void remove_all_philo(t_env *env);
+void remove_philo(t_env *env, t_philo *philo);
+void disconnect_philo(t_philo *philo);
 
 #endif

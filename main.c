@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:05:50 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/11 13:58:59 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:12:19 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int argc, char **argv)
 		generate_philo(env);
 		print_all_philo(env);
 	}
+	remove_all(env);
 	// philo = init_philo(eat_time, sleep_time, die_time);
 	// add_philo_to_list(env, philo);
 	// print_all_philo(env);

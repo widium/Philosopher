@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:56:37 by ebennace          #+#    #+#              #
-#    Updated: 2022/10/11 12:00:07 by ebennace         ###   ########.fr        #
+#    Updated: 2022/10/11 15:14:03 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ SRCS		= 	main.c \
 				source/verbose/verbose_env.c \
 				source/parsing/check_parsing.c \
 				source/data_struct/chained.c \
+				source/get/get_philo.c \
+				source/is/is_env.c \
+				source/free/free_all.c \
 
 # ==== Template ==== #
 TEMPLATE = source/header/header.txt
