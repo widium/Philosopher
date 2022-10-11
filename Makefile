@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:56:37 by ebennace          #+#    #+#              #
-#    Updated: 2022/10/10 15:59:34 by ebennace         ###   ########.fr        #
+#    Updated: 2022/10/11 12:00:07 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ NAME = philosopher
 SRCS		= 	main.c \
 				source/init/init.c \
 				source/verbose/verbose_philo.c \
+				source/verbose/verbose_env.c \
+				source/parsing/check_parsing.c \
 				source/data_struct/chained.c \
 
 # ==== Template ==== #

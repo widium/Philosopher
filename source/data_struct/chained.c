@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:52:55 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/10 16:10:04 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/11 13:57:34 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,16 @@ void add_philo_to_list(t_env *env, t_philo *philo)
     else
     {
         iter = env->first_philo;
-        while (iter)
+        while (iter->next)
+        {
             iter = iter->next;
+        }
         connect_philo(iter, philo);
     }
 }
 
-void connect_philo(t_philo *prev_philo, t_philo *curr_philo)
+void connect_philo(t_philo *prev_philo, t_philo *new_philo)
 {
-    curr_philo->prev = prev_philo;
-    prev_philo->next = curr_philo;
+    new_philo->prev = prev_philo;
+    prev_philo->next = new_philo;
 }
