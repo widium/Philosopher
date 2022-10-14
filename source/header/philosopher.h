@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/14 16:41:48 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/14 18:11:47 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 
 void *routine(void *p);
-
+int	init_thread(void);
 
 unsigned int milli_to_micro(int milliseconde);
 

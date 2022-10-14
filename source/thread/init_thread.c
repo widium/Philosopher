@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init_thread.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 18:05:50 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/14 18:27:50 by ebennace         ###   ########.fr       */
+/*   Created: 2022/10/14 18:10:33 by ebennace          #+#    #+#             */
+/*   Updated: 2022/10/14 18:11:31 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "source/header/philosopher.h"
+#include "../header/philosopher.h"
 
-int	main(int argc, char **argv)
+void *routine(void *p)
 {
-	t_env *env;
-	
-	env = init_env();
-	parsing(env, argv, argc);
-	if (env_have_error(env))
-		print_error_parsing();
-	else
-	{
-		print_env(env);
-		generate_philo(env);
-		print_all_philo(env);
-	}
-	remove_all(env);
-	printf("finish\n");
-	return (0);
+	(void)p;
+	printf("Thread\n");
+	sleep(2);
+	printf("Thread finish\n");
+	return (NULL);
 }
 
 
+int	init_thread(void)
+{
+	pthread_t t1;
+	pthread_t t2;
 
-
-
+	pthread_create(&t1, NULL, routine, NULL);
+	pthread_create(&t2, NULL, routine, NULL);
+	pthread_join(t1, NULL);
+	pthread_join(t2, NULL);
+	return (0);
+}
