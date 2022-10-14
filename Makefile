@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:56:37 by ebennace          #+#    #+#              #
-#    Updated: 2022/10/14 16:39:43 by ebennace         ###   ########.fr        #
+#    Updated: 2022/10/14 18:11:04 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRCS		= 	main.c \
 				source/free/free_all.c \
 				source/env/cycle.c \
 				source/env/time.c \
+				source/thread/init_thread.c \
 				
 
 # ==== Template ==== #
