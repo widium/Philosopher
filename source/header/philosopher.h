@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/11 15:13:02 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/14 16:41:48 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,16 @@
 
 # include <stdio.h>
 # include <unistd.h>
+# include <pthread.h>
 
 # include "../libft/libft.h"
 # include "class.h"
 
+
+void *routine(void *p);
+
+
+unsigned int milli_to_micro(int milliseconde);
 
 void parsing(t_env *env, char **argv, int argc);
 int check_correct_value(char **argv);

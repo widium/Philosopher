@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   time.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 18:05:50 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/14 18:06:02 by ebennace         ###   ########.fr       */
+/*   Created: 2022/10/13 11:42:38 by ebennace          #+#    #+#             */
+/*   Updated: 2022/10/13 11:45:01 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "source/header/philosopher.h"
+#include "../header/philosopher.h"
 
-int	main(int argc, char **argv)
+unsigned int milli_to_micro(int milliseconde)
 {
-	t_env *env;
-	
-	env = init_env();
-	parsing(env, argv, argc);
-	if (env_have_error(env))
-		print_error_parsing();
-	else
-	{
-		print_env(env);
-		generate_philo(env);
-		print_all_philo(env);
-	}
-	remove_all(env);
+    unsigned int micro;
+
+    micro = milliseconde * 1000;
+    return (micro);
 }
-
-
-
-

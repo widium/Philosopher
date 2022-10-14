@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:56:37 by ebennace          #+#    #+#              #
-#    Updated: 2022/10/11 15:14:03 by ebennace         ###   ########.fr        #
+#    Updated: 2022/10/14 16:39:43 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,9 @@ SRCS		= 	main.c \
 				source/get/get_philo.c \
 				source/is/is_env.c \
 				source/free/free_all.c \
+				source/env/cycle.c \
+				source/env/time.c \
+				
 
 # ==== Template ==== #
 TEMPLATE = source/header/header.txt
@@ -44,6 +47,7 @@ CC				= gcc
 FLAGS			= -g3
 FLAGS 			+= -Wall -Werror -Wextra
 FLAGS 			+= $(SANITIZE)
+FLAGS 			+= -pthread
 MAKE			= make -s
 
 

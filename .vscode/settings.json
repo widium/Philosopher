@@ -2,6 +2,7 @@
     "files.associations": {
         "philosopher.h": "c",
         "unistd.h": "c",
-        "class.h": "c"
+        "class.h": "c",
+        "libft.h": "c"
     }
 }

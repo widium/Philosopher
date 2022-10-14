@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:14:03 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/11 12:15:20 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/14 14:58:48 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,19 @@ t_env *init_env(void)
     env->first_philo = NULL;
     return (env);
 }
+
+void generate_philo(t_env *env)
+{
+	int index;
+	t_philo *philo;
+
+	index = 0;
+	while (index < env->nbr_philo)
+	{
+		philo = init_philo(env, index);
+		add_philo_to_list(env, philo);
+		index++;
+	}
+}
+
 
