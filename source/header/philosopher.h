@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/17 15:02:33 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/17 15:08:07 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "../libft/libft.h"
 # include "class.h"
  
-void *cycle(void *env);
+void *cycle(void *arg);
 void execution(t_env *env);
 void* routine(void* arg) ;
 int	init_threads(int number);
