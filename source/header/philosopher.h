@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/14 18:11:47 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:10:15 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@
 # include "class.h"
 
 
-void *routine(void *p);
-int	init_thread(void);
+void* routine(void* arg) ;
+int	init_threads(int number);
+int	sum_array(int size);
 
 unsigned int milli_to_micro(int milliseconde);
 

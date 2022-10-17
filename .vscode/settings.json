@@ -3,6 +3,9 @@
         "philosopher.h": "c",
         "unistd.h": "c",
         "class.h": "c",
-        "libft.h": "c"
+        "libft.h": "c",
+        "sstream": "c",
+        "valarray": "c",
+        "pthread.h": "c"
     }
 }
