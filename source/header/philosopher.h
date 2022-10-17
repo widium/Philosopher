@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/17 15:08:07 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/17 18:26:19 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,25 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <pthread.h>
+# include <time.h>
+# include <sys/time.h>
 
 # include "../libft/libft.h"
 # include "class.h"
- 
+
+long int    get_actual_time(void);
 void *cycle(void *arg);
 void execution(t_env *env);
 void* routine(void* arg) ;
 int	init_threads(int number);
 int	sum_array(int size);
 
-unsigned int milli_to_micro(int milliseconde);
+long int get_time_pass(long int start, long int end);
+long int milliseconde_to_microseconde(long int milliseconde);
+long int microseconde_to_milliseconde(long int micro);
+long int seconde_to_milliseconde(long int seconde);
+void milliseconde_sleep(long int milliseconde);
+void	ft_usleep(long int time_in_ms);
 
 void parsing(t_env *env, char **argv, int argc);
 int check_correct_value(char **argv);

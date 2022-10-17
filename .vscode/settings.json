@@ -10,6 +10,8 @@
         "algorithm": "c",
         "memory": "c",
         "mutex": "c",
-        "numeric": "c"
+        "numeric": "c",
+        "ratio": "c",
+        "stdio.h": "c"
     }
 }
