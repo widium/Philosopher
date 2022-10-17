@@ -6,13 +6,13 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:14:03 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/14 14:58:48 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/17 15:01:56 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/philosopher.h"
 
-t_philo *init_philo(t_env *env, int num)
+t_philo *init_philo(int num)
 {
     t_philo *philo;
 
@@ -21,10 +21,8 @@ t_philo *init_philo(t_env *env, int num)
         return (NULL);
     philo->num = num;
     philo->state = -1;
-    philo->nbr_of_forks = -1;
-    philo->eat_time = env->eat_time;
-    philo->sleep_time = env->sleep_time;
-    philo->die_time = env->die_time;
+    philo->right_fork = -1;
+    philo->left_fork = -1;
     philo->next = NULL;
     philo->prev = NULL;
     return (philo);
@@ -55,7 +53,7 @@ void generate_philo(t_env *env)
 	index = 0;
 	while (index < env->nbr_philo)
 	{
-		philo = init_philo(env, index);
+		philo = init_philo(index);
 		add_philo_to_list(env, philo);
 		index++;
 	}
