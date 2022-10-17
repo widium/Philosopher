@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:56:37 by ebennace          #+#    #+#              #
-#    Updated: 2022/10/17 08:31:04 by ebennace         ###   ########.fr        #
+#    Updated: 2022/10/17 14:36:58 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,8 @@ SRCS		= 	main.c \
 				source/env/cycle.c \
 				source/env/time.c \
 				source/thread/init_thread.c \
+				source/execution/routine.c \
+				source/execution/philo_state.c \
 				
 
 # ==== Template ==== #

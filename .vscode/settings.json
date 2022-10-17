@@ -6,6 +6,10 @@
         "libft.h": "c",
         "sstream": "c",
         "valarray": "c",
-        "pthread.h": "c"
+        "pthread.h": "c",
+        "algorithm": "c",
+        "memory": "c",
+        "mutex": "c",
+        "numeric": "c"
     }
 }
