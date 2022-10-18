@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:09:13 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/17 15:03:03 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/18 18:38:07 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,21 @@
 # define THINK 2
 # define DIE 3
 
+typedef struct s_times
+{
+    int             die_time;
+    int             eat_time;
+    int             sleep_time;
+    int             time_must_eat; 
+}   t_times;
+
 typedef	struct s_philo
 {
     int             num;
 	int             state;
-    int             right_fork;
-    int             left_fork;
+    pthread_mutex_t fork;
+    pthread_mutex_t next_fork;
+    t_times        *times;
     pthread_t       thread;
     struct s_philo  *next;
     struct s_philo  *prev;
@@ -34,12 +43,8 @@ typedef	struct s_philo
 typedef struct s_env
 {
     int             nbr_philo;
-    int             die_time;
-    int             eat_time;
-    int             sleep_time;
-    int             time_must_eat;
     int             error_parsing;
-    pthread_mutex_t mutex;
+    t_times        *times;
     t_philo         *first_philo;
 
 }   t_env;

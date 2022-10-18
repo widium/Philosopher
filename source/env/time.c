@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   time.c                                             :+:      :+:    :+:   */
+/*   time_ms.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:42:38 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/17 18:30:09 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/18 14:37:56 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 long int    get_actual_time(void)
 {
-    long int        time;
+    long int        time_ms;
     long int        seconde;
     long int        microseconde;
     struct timeval  current_time;
@@ -22,8 +22,8 @@ long int    get_actual_time(void)
     gettimeofday(&current_time, NULL);
     seconde = seconde_to_milliseconde(current_time.tv_sec);
     microseconde = microseconde_to_milliseconde(current_time.tv_usec);
-    time = seconde + microseconde;
-    return (time);
+    time_ms = seconde + microseconde;
+    return (time_ms);
 }
 
 long int milliseconde_to_microseconde(long int milliseconde)
@@ -50,7 +50,7 @@ long int seconde_to_milliseconde(long int seconde)
     return (milli);
 }
 
-void milliseconde_sleep(long int milliseconde)
+void ms_sleep(long int milliseconde)
 {
     long int	start_time;
     long int    timer_ms;

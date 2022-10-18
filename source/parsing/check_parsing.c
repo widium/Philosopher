@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:58:59 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/11 11:59:48 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/18 18:38:23 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,21 @@ void parsing(t_env *env, char **argv, int argc)
 
 void add_value_to_env(t_env *env, char **argv, int argc)
 {
-		env->nbr_philo = ft_atoi(argv[1]);
-		env->die_time = ft_atoi(argv[2]);
-		env->sleep_time = ft_atoi(argv[3]);
-		env->eat_time = ft_atoi(argv[4]);
+	int die_t;
+	int sleep_t;
+	int eat_t;
+	int must_eat_t;
+	
+	env->nbr_philo = ft_atoi(argv[1]);
+	die_t = ft_atoi(argv[2]);
+	sleep_t = ft_atoi(argv[3]);
+	eat_t = ft_atoi(argv[4]);
 	if (argc == 6)
-		env->time_must_eat = ft_atoi(argv[5]);
+		must_eat_t = ft_atoi(argv[5]);
+	else
+		must_eat_t = -1;
+	env->times = init_times(die_t, eat_t, sleep_t, must_eat_t);
+	
 }
 
 int env_have_error(t_env *env)

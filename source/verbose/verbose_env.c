@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:32:41 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/11 11:54:20 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/18 18:38:23 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void print_env(t_env *env)
 {
 	printf("------ Env ------\n");
 	printf("number of philo : %d\n", env->nbr_philo);
-	printf("die time : %dms\n", env->die_time);
-	printf("sleep time : %dms\n", env->sleep_time);
-	printf("eat time : %dms\n", env->eat_time);
-    if (env->time_must_eat > 0)
-	    printf("time must eat : %dms\n", env->time_must_eat);
+	printf("die time : %dms\n", env->times->die_time);
+	printf("sleep time : %dms\n", env->times->sleep_time);
+	printf("eat time : %dms\n", env->times->eat_time);
+    if (env->times->time_must_eat > 0)
+	    printf("time must eat : %dms\n", env->times->time_must_eat);
 	printf("----------------\n");
 }
 
