@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:39:15 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/11 15:28:32 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/18 18:39:15 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void remove_all(t_env *env)
 {
     remove_all_philo(env);
+    free(env->times);
     free(env);
 }
 
@@ -44,6 +45,7 @@ void remove_philo(t_env *env, t_philo *philo)
             env->first_philo = philo->next;
     }
     disconnect_philo(philo); 
+    philo->times = NULL;
     free(philo);
     philo = NULL;    
 }
