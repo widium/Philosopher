@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:14:03 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/18 18:39:35 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/18 20:23:31 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_philo *init_philo(t_times *times, int num)
     philo->times = times;
     philo->next = NULL;
     philo->prev = NULL;
+    pthread_mutex_init(&philo->fork, NULL);
     return (philo);
 }
 
@@ -64,9 +65,27 @@ void generate_philo(t_env *env)
 	while (index < env->nbr_philo)
 	{
 		philo = init_philo(env->times, index);
+        pthread_create(&philo->thread, NULL, &cycle, philo);
 		add_philo_to_list(env, philo);
 		index++;
 	}
+    give_fork_at_philo(env);
+    
+}
+
+void give_fork_at_philo(t_env *env)
+{
+    t_philo *philo;
+    t_philo *first_philo;
+
+    philo = get_first_philo(env);
+    while (philo->next)
+    {
+        philo->next_fork = &philo->next->fork;
+        philo = philo->next;
+    }
+    first_philo = get_first_philo(env);
+    philo->next_fork = &first_philo->fork;
 }
 
 
