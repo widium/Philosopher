@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:09:13 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/18 18:38:07 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/18 20:22:37 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef	struct s_philo
     int             num;
 	int             state;
     pthread_mutex_t fork;
-    pthread_mutex_t next_fork;
+    pthread_mutex_t *next_fork;
     t_times        *times;
     pthread_t       thread;
     struct s_philo  *next;

@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:49:09 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/18 18:39:15 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/18 19:56:36 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@ void execution(t_env *env)
 {
     t_philo *philo;
 
-    philo = get_first_philo(env);
-    while (philo)
-    {
-        pthread_create(&philo->thread, NULL, &cycle, philo);
-        philo = philo->next;
-    }
     philo = get_first_philo(env);
     while (philo)
     {

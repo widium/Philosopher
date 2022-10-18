@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:19:59 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/18 18:40:17 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/18 20:23:00 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void print_philo(t_philo *philo)
     if (!philo)
         return ;
     printf("---- Philo Num : [%d] ----\n", philo->num);
+    printf("Fork [%p]\n", &philo->fork);
+    printf("Next Fork [%p]\n", philo->next_fork);
     printf("State : [%d]\n", philo->state);
     printf("----- ----- -----\n");
 }

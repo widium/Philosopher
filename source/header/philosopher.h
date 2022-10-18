@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/18 18:38:52 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/18 20:18:34 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int env_have_error(t_env *env);
 t_philo *init_philo(t_times *times, int num);
 t_env *init_env(void);
 t_times *init_times(int die_t, int eat_t, int sleep_t, int must_eat_t);
+void give_fork_at_philo(t_env *env);
 void generate_philo(t_env *env);
 
 void add_philo_to_list(t_env *env, t_philo *philo);
