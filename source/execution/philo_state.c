@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:36:11 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/19 15:39:24 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:23:26 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 void philo_eat(t_philo *philo)
 {
     philo->times->last_eat_time = get_actual_time();
+    printf("philo [%d] wait\n", philo->num);
     if (philo_can_use_two_fork(philo))
     {
+        printf("philo [%d] unlock 2 fork\n", philo->num);
         if (no_more_time_to_eat(philo))
         {
             change_state(philo, DEAD);
