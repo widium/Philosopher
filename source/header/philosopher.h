@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/19 15:18:44 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:29:41 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ char *verbose_state(int state);
 
 int is_first_philo(t_env *env, t_philo *philo);
 int is_last_philo(t_philo *philo);
+int philo_is_dead(t_philo *philo);
 
 t_philo *get_first_philo(t_env *env);
 
