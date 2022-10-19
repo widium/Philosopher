@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:09:13 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/18 20:22:37 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/19 10:22:12 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@
 # define EAT 0
 # define SLEEP 1
 # define THINK 2
-# define DIE 3
+# define DEAD 3
 
 typedef struct s_times
 {
     int             die_time;
     int             eat_time;
     int             sleep_time;
-    int             time_must_eat; 
+    int             must_eat_time; 
+    long int        last_eat_time;           
 }   t_times;
 
 typedef	struct s_philo

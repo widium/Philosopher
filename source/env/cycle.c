@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:49:09 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/18 19:56:36 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/19 15:02:26 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,14 @@ void *cycle(void *arg)
     t_philo *philo;
     
     philo = (t_philo *)arg;
-    printf("philo eat...\n");
-    ms_sleep(philo->times->eat_time);
-    printf("philo sleep...\n");
-    ms_sleep(philo->times->sleep_time);
+    
+    philo_eat(philo);
+    philo_sleep(philo);
+    philo_think(philo);
     return (NULL);
+}
+
+void change_state(t_philo *philo, int state)
+{
+    philo->state = state;
 }
