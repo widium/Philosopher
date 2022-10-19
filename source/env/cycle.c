@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:49:09 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/19 17:31:07 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/19 18:23:04 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ void execution(t_env *env)
     philo = get_first_philo(env);
     while (philo)
     {
-        pthread_join(philo->thread, NULL);
+        if (there_are_not_dead_philos(philo->env))
+        {
+            pthread_join(philo->thread, NULL);
+        } 
         philo = philo->next;
     }
 }
@@ -30,16 +33,12 @@ void *cycle(void *arg)
     
     philo = (t_philo *)arg;
     
-    philo_eat(philo);
-    if (philo_is_dead(philo))
-    {
-        
-    }
-    else
-    {
+    if (there_are_not_dead_philos(philo->env))
+        philo_eat(philo);
+    if (there_are_not_dead_philos(philo->env))
         philo_sleep(philo);
+    if (there_are_not_dead_philos(philo->env))   
         philo_think(philo);
-    }
     return (NULL);
 }
 
@@ -55,7 +54,13 @@ int philo_is_dead(t_philo *philo)
     return (0);
 }
 
-void stop_cycle(t_env *env)
+int there_are_not_dead_philos(t_env *env)
 {
+    if (env->philo_dead == 0)
+        return (1);
+    return (0);
+} 
+// void stop_cycle(t_env *env)
+// {
     
-}
+// }

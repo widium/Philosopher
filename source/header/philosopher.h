@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/19 17:29:41 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/19 18:21:46 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int	init_threads(int number);
 int	sum_array(int size);
 
 long int get_time_pass(long int start, long int end);
-long int get_time_passed(long int start, long int end);
 long int milliseconde_to_microseconde(long int milliseconde);
 long int microseconde_to_milliseconde(long int micro);
 long int seconde_to_milliseconde(long int seconde);
@@ -42,7 +41,7 @@ int check_correct_value(char **argv);
 void add_value_to_env(t_env *env, char **argv, int argc);
 int env_have_error(t_env *env);
 
-t_philo *init_philo(t_times *times, int num);
+t_philo *init_philo(t_env *env, int num);
 t_env *init_env(void);
 t_times *init_times(int die_t, int eat_t, int sleep_t, int must_eat_t);
 void give_fork_at_philo(t_env *env);
@@ -63,6 +62,7 @@ char *verbose_state(int state);
 int is_first_philo(t_env *env, t_philo *philo);
 int is_last_philo(t_philo *philo);
 int philo_is_dead(t_philo *philo);
+int there_are_not_dead_philos(t_env *env);
 
 t_philo *get_first_philo(t_env *env);
 
