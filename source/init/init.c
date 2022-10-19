@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:14:03 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/18 20:23:31 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/19 10:23:36 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ t_times *init_times(int die_t, int eat_t, int sleep_t, int must_eat_t)
     time->die_time = die_t;
     time->eat_time = eat_t;
     time->sleep_time = sleep_t;
-    time->time_must_eat = must_eat_t;
+    time->must_eat_time = must_eat_t;
+    time->last_eat_time = 0;
     return (time);
 }
 
@@ -61,7 +62,7 @@ void generate_philo(t_env *env)
 	int index;
 	t_philo *philo;
 
-	index = 0;
+	index = 1;
 	while (index < env->nbr_philo)
 	{
 		philo = init_philo(env->times, index);

@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:32:41 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/18 18:38:23 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/19 10:21:38 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void print_env(t_env *env)
 	printf("die time : %dms\n", env->times->die_time);
 	printf("sleep time : %dms\n", env->times->sleep_time);
 	printf("eat time : %dms\n", env->times->eat_time);
-    if (env->times->time_must_eat > 0)
-	    printf("time must eat : %dms\n", env->times->time_must_eat);
+    if (env->times->must_eat_time > 0)
+	    printf("time must eat : %dms\n", env->times->must_eat_time);
 	printf("----------------\n");
 }
 

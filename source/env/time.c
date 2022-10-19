@@ -69,3 +69,10 @@ long int get_time_pass(long int start, long int end)
 {
     return (end - start);
 }
+
+long int get_time_passed(long int start, long int end)
+{
+    // printf("start [%ld]\n", start);
+    // printf("end [%ld]\n", end);
+    return (end - start);
+}
