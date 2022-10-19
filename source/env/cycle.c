@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:49:09 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/19 18:23:04 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/19 18:28:36 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,9 @@ void *cycle(void *arg)
     
     philo = (t_philo *)arg;
     
-    if (there_are_not_dead_philos(philo->env))
-        philo_eat(philo);
-    if (there_are_not_dead_philos(philo->env))
-        philo_sleep(philo);
-    if (there_are_not_dead_philos(philo->env))   
-        philo_think(philo);
+    philo_eat(philo);
+    philo_sleep(philo);
+    philo_think(philo);
     return (NULL);
 }
 
