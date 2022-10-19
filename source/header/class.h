@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:09:13 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/19 10:22:12 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/19 18:11:02 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,19 @@ typedef	struct s_philo
     pthread_t       thread;
     struct s_philo  *next;
     struct s_philo  *prev;
+    struct s_env    *env;
 
 }   t_philo;
 
-
 typedef struct s_env
 {
+    int             philo_dead;
     int             nbr_philo;
     int             error_parsing;
     t_times        *times;
     t_philo         *first_philo;
 
 }   t_env;
+
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:14:03 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/19 10:23:36 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/19 18:18:15 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/philosopher.h"
 
-t_philo *init_philo(t_times *times, int num)
+t_philo *init_philo(t_env *env, int num)
 {
     t_philo *philo;
 
@@ -21,9 +21,10 @@ t_philo *init_philo(t_times *times, int num)
         return (NULL);
     philo->num = num;
     philo->state = -1;
-    philo->times = times;
+    philo->times = env->times;
     philo->next = NULL;
     philo->prev = NULL;
+    philo->env = env;
     pthread_mutex_init(&philo->fork, NULL);
     return (philo);
 }
@@ -37,6 +38,7 @@ t_env *init_env(void)
         return (NULL);
     env->error_parsing = -1;
     env->nbr_philo = -1;
+    env->philo_dead = 0;
     env->times = NULL;
     env->first_philo = NULL;
     return (env);
@@ -65,7 +67,7 @@ void generate_philo(t_env *env)
 	index = 1;
 	while (index < env->nbr_philo)
 	{
-		philo = init_philo(env->times, index);
+		philo = init_philo(env, index);
         pthread_create(&philo->thread, NULL, &cycle, philo);
 		add_philo_to_list(env, philo);
 		index++;

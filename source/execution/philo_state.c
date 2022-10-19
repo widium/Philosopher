@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:36:11 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/19 17:23:26 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/19 18:21:05 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void philo_eat(t_philo *philo)
         if (no_more_time_to_eat(philo))
         {
             change_state(philo, DEAD);
+            philo->env->philo_dead += 1;
             printf("philo [%d] DEAD XX\n", philo->num);
             philo_puts_down_fork(philo);
             return ;
