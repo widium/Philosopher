@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   state.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 18:05:50 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/20 12:18:49 by ebennace         ###   ########.fr       */
+/*   Created: 2022/10/20 11:52:31 by ebennace          #+#    #+#             */
+/*   Updated: 2022/10/20 11:53:07 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "source/header/philosopher.h"
+# include "../header/philosopher.h"
 
-int	main(int argc, char **argv)
+void change_state(t_philo *philo, int state)
 {
-	t_env	*env;
+    philo->state = state;
+}
 
-	env = init_env();
-	parsing(env, argv, argc);
-	if (env_have_error(env))
-		print_error_parsing();
-	else
-	{
-		print_env(env);
-		generate_philo(env);
-		// print_all_philo(env);
-		execution(env);
-	}
-	remove_all(env);
-	return (0);
+int philo_is_dead(t_philo *philo)
+{
+    if (philo->state == DEAD)
+        return (1);
+    return (0);
 }
