@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:14:03 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/19 18:18:15 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/20 12:16:29 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_philo *init_philo(t_env *env, int num)
     philo->prev = NULL;
     philo->env = env;
     pthread_mutex_init(&philo->fork, NULL);
+    pthread_create(&philo->thread, NULL, &cycle, philo);
     return (philo);
 }
 
@@ -38,6 +39,7 @@ t_env *init_env(void)
         return (NULL);
     env->error_parsing = -1;
     env->nbr_philo = -1;
+    env->count_philo_meal = 0;
     env->philo_dead = 0;
     env->times = NULL;
     env->first_philo = NULL;
@@ -57,38 +59,6 @@ t_times *init_times(int die_t, int eat_t, int sleep_t, int must_eat_t)
     time->must_eat_time = must_eat_t;
     time->last_eat_time = 0;
     return (time);
-}
-
-void generate_philo(t_env *env)
-{
-	int index;
-	t_philo *philo;
-
-	index = 1;
-	while (index < env->nbr_philo)
-	{
-		philo = init_philo(env, index);
-        pthread_create(&philo->thread, NULL, &cycle, philo);
-		add_philo_to_list(env, philo);
-		index++;
-	}
-    give_fork_at_philo(env);
-    
-}
-
-void give_fork_at_philo(t_env *env)
-{
-    t_philo *philo;
-    t_philo *first_philo;
-
-    philo = get_first_philo(env);
-    while (philo->next)
-    {
-        philo->next_fork = &philo->next->fork;
-        philo = philo->next;
-    }
-    first_philo = get_first_philo(env);
-    philo->next_fork = &first_philo->fork;
 }
 
 

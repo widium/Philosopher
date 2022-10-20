@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:56:37 by ebennace          #+#    #+#              #
-#    Updated: 2022/10/17 14:36:58 by ebennace         ###   ########.fr        #
+#    Updated: 2022/10/20 12:12:22 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,21 +14,24 @@ NAME = philosopher
 
 # === File && Header === #
 SRCS		= 	main.c \
+				source/data_struct/chained.c \
+				source/env/time.c \
+				source/execution/routine.c \
+				source/free/free_all.c \
+				source/get/get_philo.c \
 				source/init/init.c \
+				source/init/generate.c \
+				source/is/is_env.c \
+				source/is/is_philo.c \
+				source/parsing/check_parsing.c \
+				source/state/philo_state.c \
+				source/state/fork.c \
+				source/state/eat.c \
+				source/state/state.c \
+				source/thread/init_thread.c \
 				source/verbose/verbose_philo.c \
 				source/verbose/verbose_env.c \
-				source/parsing/check_parsing.c \
-				source/data_struct/chained.c \
-				source/get/get_philo.c \
-				source/is/is_env.c \
-				source/free/free_all.c \
-				source/env/cycle.c \
-				source/env/time.c \
-				source/thread/init_thread.c \
-				source/execution/routine.c \
-				source/execution/philo_state.c \
 				
-
 # ==== Template ==== #
 TEMPLATE = source/header/header.txt
 

@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:50:43 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/11 14:57:30 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:54:58 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,10 @@ int is_last_philo(t_philo *philo)
         return (0);
     return (1);
 }
+
+int there_are_not_dead_philos(t_env *env)
+{
+    if (env->philo_dead == 0)
+        return (1);
+    return (0);
+} 

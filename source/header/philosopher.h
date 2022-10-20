@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/19 18:21:46 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/20 12:05:11 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,13 @@ void print_all_philo(t_env *env);
 char *verbose_state(int state);
 
 
-
+int philo_is_pair(t_philo *philo);
+int philo_is_impair(t_philo *philo);
 int is_first_philo(t_env *env, t_philo *philo);
 int is_last_philo(t_philo *philo);
 int philo_is_dead(t_philo *philo);
 int there_are_not_dead_philos(t_env *env);
+int all_philo_have_eat(t_philo *philo);
 
 t_philo *get_first_philo(t_env *env);
 
