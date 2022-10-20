@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:34:10 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/20 12:21:44 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/20 17:03:52 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void execution(t_env *env)
 
 void *cycle(void *arg)
 {
+    printf("salut\n");
     t_philo *philo;
     
     philo = (t_philo *)arg;
