@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:09:13 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 15:06:44 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 18:05:01 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_times
     int             die_time;
     int             eat_time;
     int             sleep_time;
-    int             must_eat_time; 
+    int             number_of_meals; 
     long int        start_time;         
 }   t_times;
 
@@ -32,6 +32,7 @@ typedef	struct s_philo
 {
     int             num;
 	int             state;
+    int             nbr_of_meal;
     long int        last_eat_time;
     pthread_mutex_t fork;
     pthread_mutex_t *next_fork;
@@ -46,7 +47,7 @@ typedef	struct s_philo
 typedef struct s_env
 {
     int             philo_dead;
-    int             count_philo_meal;
+    int             count_all_philos_meals;
     int             nbr_philo;
     int             error_parsing;
     t_times        *times;

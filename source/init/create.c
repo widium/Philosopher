@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:42:00 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 16:40:01 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 18:34:59 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,26 @@ void create_supervisor(t_env *env)
         {
             change_state(philo, DEAD);
             print_philo_state(philo);
+            printf("nbr meal [%d]\n", philo->nbr_of_meal);
             break;
         }
         philo = philo->next;
         get_infinite_loop(env, &philo);
     }
+}
+
+int all_philo_have_not_eat_enough(t_env *env)
+{
+    t_philo *philo;
+
+    philo = get_first_philo(env);
+    while (philo)
+    {
+        if (philo->nbr_of_meal < philo->times->number_of_meals)
+            return (1);
+        philo = philo->next;
+    }
+    return (0);
 }
 
 void get_infinite_loop(t_env *env, t_philo **philo)
