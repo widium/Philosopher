@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:19:59 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/19 09:43:43 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 15:08:21 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,4 @@ void print_all_philo(t_env *env)
         print_philo(iter);
         iter = iter->next;
     }
-}
-
-char *verbose_state(int state)
-{
-    if (state == EAT)
-        return ("EAT"); 
-    else if (state == SLEEP)
-        return ("SLEEP");
-    else if (state == THINK)
-        return ("THINK");
-    else if (state == DEAD)
-        return ("DEAD");
-    return (NULL);
 }

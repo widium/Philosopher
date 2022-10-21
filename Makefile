@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:56:37 by ebennace          #+#    #+#              #
-#    Updated: 2022/10/21 11:32:16 by ebennace         ###   ########.fr        #
+#    Updated: 2022/10/21 15:06:08 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCS		= 	main.c \
 				source/execution/routine.c \
 				source/free/free_all.c \
 				source/get/get_philo.c \
+				source/init/create.c \
 				source/init/init.c \
 				source/init/generate.c \
 				source/is/can.c \
@@ -33,6 +34,7 @@ SRCS		= 	main.c \
 				source/thread/init_thread.c \
 				source/verbose/verbose_philo.c \
 				source/verbose/verbose_env.c \
+				source/verbose/verbose_state.c \
 				
 # ==== Template ==== #
 TEMPLATE = source/header/header.txt
