@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:34:10 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/20 17:03:52 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 10:06:15 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,22 @@ void execution(t_env *env)
 
 void *cycle(void *arg)
 {
-    printf("salut\n");
     t_philo *philo;
     
     philo = (t_philo *)arg;
-    while (there_are_not_dead_philos(philo->env))
+    philo->times->start_time = get_actual_time();
+    philo->times->last_eat_time = philo->times->start_time;
+    if (philo_is_pair(philo))
+    {
+        ms_sleep(philo->times->eat_time/2);
+    }
+    while (1)
     {   
-        if (philo_is_pair(philo))
-        {
-            philo_sleep(philo);
-        }
+        if (there_are_dead_philos(philo->env))
+            break;
         philo_eat(philo);
-        philo_think(philo);
-        // printf("all philo eat ? [%d]\n", all_philo_have_eat(philo)); 
+        philo_sleep(philo);
     }
     return (NULL);
 }
 
-int all_philo_have_eat(t_philo *philo)
-{
-    if (philo->env->count_philo_meal == philo->env->nbr_philo)
-        return (1);
-    return (0);
-}

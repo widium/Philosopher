@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:05:50 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/20 12:18:49 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 09:28:53 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	main(int argc, char **argv)
 		generate_philo(env);
 		// print_all_philo(env);
 		execution(env);
+		
 	}
 	remove_all(env);
 	return (0);
