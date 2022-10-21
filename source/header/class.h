@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:09:13 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/20 12:00:40 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/20 17:31:16 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ typedef struct s_times
     int             eat_time;
     int             sleep_time;
     int             must_eat_time; 
-    long int        last_eat_time;           
+    long int        last_eat_time;
+    long int        start_time;           
 }   t_times;
 
 typedef	struct s_philo

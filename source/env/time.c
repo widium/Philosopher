@@ -60,7 +60,7 @@ void ms_sleep(long int milliseconde)
 	while (timer_ms < milliseconde)
     {
         timer_ms = get_time_pass(start_time, get_actual_time());
-        usleep(milliseconde / 1000);
+        usleep(milliseconde / 10);
     }
 		
 }

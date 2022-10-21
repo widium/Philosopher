@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 11:50:43 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/20 11:51:24 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/20 17:47:57 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int no_more_time_to_eat(t_philo *philo)
 {
-    if (get_time_pass(philo->times->last_eat_time, get_actual_time()) >= philo->times->die_time)
+    if (get_time_pass(philo->times->last_eat_time, get_actual_time())
+        >= philo->times->die_time)
         return (1);
     return (0);
 }

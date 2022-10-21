@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 12:09:21 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/20 12:18:33 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 09:49:01 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,13 @@ void give_fork_at_philo(t_env *env)
         philo->next_fork = &philo->next->fork;
         philo = philo->next;
     }
-    first_philo = get_first_philo(env);
-    philo->next_fork = &first_philo->fork;
+    if (env->nbr_philo > 1)
+    {
+        first_philo = get_first_philo(env);
+        philo->next_fork = &first_philo->fork;
+    }
+    else 
+    {
+        philo->next_fork = NULL;
+    }
 }

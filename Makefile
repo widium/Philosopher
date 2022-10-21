@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:56:37 by ebennace          #+#    #+#              #
-#    Updated: 2022/10/20 12:12:22 by ebennace         ###   ########.fr        #
+#    Updated: 2022/10/21 08:54:47 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS		= 	main.c \
 				source/get/get_philo.c \
 				source/init/init.c \
 				source/init/generate.c \
+				source/is/can.c \
 				source/is/is_env.c \
 				source/is/is_philo.c \
 				source/parsing/check_parsing.c \

@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_env.c                                           :+:      :+:    :+:   */
+/*   can.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 14:50:43 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/20 17:34:56 by ebennace         ###   ########.fr       */
+/*   Created: 2022/10/21 08:54:13 by ebennace          #+#    #+#             */
+/*   Updated: 2022/10/21 08:55:07 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/philosopher.h"
+# include "../header/philosopher.h"
 
-int is_first_philo(t_env *env, t_philo *philo)
+int all_philo_have_eat(t_philo *philo)
 {
-    if (env->first_philo == philo)
+    if (philo->env->count_philo_meal == philo->env->nbr_philo)
         return (1);
     return (0);
 }
 
-int is_last_philo(t_philo *philo)
+int all_philo_didnt_eat(t_philo *philo)
 {
-    if (philo->next)
-        return (0);
-    return (1);
+    if (philo->env->count_philo_meal < philo->env->nbr_philo)
+        return (1);
+    return (0);
 }
 
-int there_are_not_dead_philos(t_env *env)
+int philo_can_eat(t_philo *philo)
 {
-    if (env->philo_dead == 0)
+    if (there_are_not_dead_philos(philo->env) && all_philo_didnt_eat(philo))
         return (1);
     return (0);
-} 
+}
 
-int there_are_dead_philos(t_env *env)
+int philo_can_make_action(t_philo *philo)
 {
-    if (env->philo_dead > 0)
+   if (there_are_not_dead_philos(philo->env))
         return (1);
-    return (0);
-} 
+    return (0); 
+}
