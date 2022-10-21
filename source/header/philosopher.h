@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 15:01:21 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 15:18:52 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	init_threads(int number);
 int	sum_array(int size);
 void create_supervisor(t_env *env);
 void create_delayed_start(t_philo *philo);
-
+void add_meal_counter(t_philo *philo);
 
 long int get_time_pass(long int start, long int end);
 long int milliseconde_to_microseconde(long int milliseconde);
@@ -85,15 +85,15 @@ void disconnect_philo(t_philo *philo);
 void philo_die_or_eat(t_philo *philo);
 void philo_eat(t_philo *philo);
 void philo_sleep(t_philo *philo);
-void philo_think(t_philo *philo);
 void philo_die(t_philo *philo);
 
 int philo_can_eat(t_philo *philo);
 int philo_can_make_action(t_philo *philo);
 void philo_puts_down_fork(t_philo *philo);
 int no_more_time_to_eat(t_philo *philo);
+int have_time_to_eat(t_philo *philo);
 void check_meal_counter(t_philo *philo);
 
-void save_last_eat_time(t_philo *philo);
+void reset_eat_timer(t_philo *philo);
 
 #endif
