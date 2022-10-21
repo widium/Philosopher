@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 12:09:21 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 09:49:01 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:27:03 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void generate_philo(t_env *env)
 	t_philo *philo;
 
 	index = 1;
+    env->times->start_time = get_actual_time();
 	while (index <= env->nbr_philo)
 	{
 		philo = init_philo(env, index);

@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 09:50:08 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:39:11 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void parsing(t_env *env, char **argv, int argc);
 int check_correct_value(char **argv);
 void add_value_to_env(t_env *env, char **argv, int argc);
 int env_have_error(t_env *env);
-
+void create_threads(t_env *env);
 int philo_can_use_fork(t_philo *philo, pthread_mutex_t *fork);
 
 t_philo *init_philo(t_env *env, int num);
