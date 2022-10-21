@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 12:39:11 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 15:01:21 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ void execution(t_env *env);
 void* routine(void* arg) ;
 int	init_threads(int number);
 int	sum_array(int size);
+void create_supervisor(t_env *env);
+void create_delayed_start(t_philo *philo);
+
 
 long int get_time_pass(long int start, long int end);
 long int milliseconde_to_microseconde(long int milliseconde);
@@ -40,8 +43,9 @@ void parsing(t_env *env, char **argv, int argc);
 int check_correct_value(char **argv);
 void add_value_to_env(t_env *env, char **argv, int argc);
 int env_have_error(t_env *env);
-void create_threads(t_env *env);
+void create_all_threads(t_env *env);
 int philo_can_use_fork(t_philo *philo, pthread_mutex_t *fork);
+int philo_can_use_two_fork(t_philo *philo);
 
 t_philo *init_philo(t_env *env, int num);
 t_env *init_env(void);
@@ -57,6 +61,7 @@ void print_error_parsing(void);
 void print_env(t_env *env);
 void print_philo(t_philo *philo);
 void print_all_philo(t_env *env);
+void print_philo_state(t_philo *philo);
 char *verbose_state(int state);
 
 
@@ -85,7 +90,6 @@ void philo_die(t_philo *philo);
 
 int philo_can_eat(t_philo *philo);
 int philo_can_make_action(t_philo *philo);
-int philo_can_use_two_fork(t_philo *philo);
 void philo_puts_down_fork(t_philo *philo);
 int no_more_time_to_eat(t_philo *philo);
 void check_meal_counter(t_philo *philo);
