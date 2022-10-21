@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:42:00 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 15:58:16 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 16:00:30 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ void create_supervisor(t_env *env)
             break;
         }
         philo = philo->next;
-        get_infinite_loop(env, &philo);
+        if (!(philo))
+        philo = get_first_philo(env);
+        // get_infinite_loop(env, &philo);
     }
 }
 
