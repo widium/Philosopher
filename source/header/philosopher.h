@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 15:51:54 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 17:02:43 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,15 @@ int	sum_array(int size);
 void create_supervisor(t_env *env);
 void create_delayed_start(t_philo *philo);
 void add_meal_counter(t_philo *philo);
-
+int have_error_convertion(int die_t, int sleep_t, int eat_t, int must_eat_t);
+void convert_argv_to_millisecond(t_env *env, int argc, char **argv);
 void get_infinite_loop(t_env *env, t_philo **philo);
+
 long int get_time_pass(long int start, long int end);
 long int milliseconde_to_microseconde(long int milliseconde);
 long int microseconde_to_milliseconde(long int micro);
 long int seconde_to_milliseconde(long int seconde);
 void ms_sleep(long int milliseconde);
-void	ft_usleep(long int time_in_ms);
 
 void parsing(t_env *env, char **argv, int argc);
 int check_correct_value(char **argv);

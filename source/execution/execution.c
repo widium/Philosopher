@@ -1,16 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   routine.c                                          :+:      :+:    :+:   */
+/*   execution.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:34:10 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 15:39:09 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 16:40:39 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/philosopher.h"
+
+void execution(t_env *env)
+{
+    create_all_threads(env);
+    create_supervisor(env);
+}
 
 void *cycle(void *arg)
 {
@@ -26,13 +32,5 @@ void *cycle(void *arg)
         philo_sleep(philo);
     }
     return (NULL);
-}
-
-void create_delayed_start(t_philo *philo)
-{
-   if (philo_is_pair(philo))
-    {
-        ms_sleep(philo->times->eat_time / 2);
-    }
 }
 

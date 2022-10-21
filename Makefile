@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:56:37 by ebennace          #+#    #+#              #
-#    Updated: 2022/10/21 15:55:12 by ebennace         ###   ########.fr        #
+#    Updated: 2022/10/21 16:40:28 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS		= 	main.c \
 				source/env/dining.c \
 				source/env/check_death.c \
 				source/env/time.c \
-				source/execution/routine.c \
+				source/execution/execution.c \
 				source/free/free_all.c \
 				source/get/get_philo.c \
 				source/init/create.c \
