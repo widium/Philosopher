@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:14:03 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 12:37:17 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 16:48:48 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_env *init_env(void)
     env = (t_env *)malloc(sizeof(t_env));
     if (!env)
         return (NULL);
-    env->error_parsing = -1;
+    env->error_parsing = 0;
     env->nbr_philo = -1;
     env->count_philo_meal = 0;
     env->philo_dead = 0;
