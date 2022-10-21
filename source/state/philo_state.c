@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:36:11 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 15:31:47 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 18:06:09 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void philo_eat(t_philo *philo)
         change_state(philo, EAT);
         print_philo_state(philo);
         reset_eat_timer(philo);
-        add_meal_counter(philo);
+        update_meal_counter(philo);
         ms_sleep(philo->times->eat_time);
-        check_meal_counter(philo);
+        check_all_philos_meals_counter(philo);
     }
 }
 

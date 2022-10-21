@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:14:03 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 16:48:48 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 18:05:01 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_philo *init_philo(t_env *env, int num)
         return (NULL);
     philo->num = num;
     philo->state = -1;
+    philo->nbr_of_meal = 0;
     philo->times = env->times;
     philo->next = NULL;
     philo->prev = NULL;
@@ -39,7 +40,7 @@ t_env *init_env(void)
         return (NULL);
     env->error_parsing = 0;
     env->nbr_philo = -1;
-    env->count_philo_meal = 0;
+    env->count_all_philos_meals = 0;
     env->philo_dead = 0;
     env->times = NULL;
     env->first_philo = NULL;
@@ -56,7 +57,7 @@ t_times *init_times(int die_t, int eat_t, int sleep_t, int must_eat_t)
     time->die_time = die_t;
     time->eat_time = eat_t;
     time->sleep_time = sleep_t;
-    time->must_eat_time = must_eat_t;
+    time->number_of_meals = must_eat_t;
     return (time);
 }
 
