@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:56:37 by ebennace          #+#    #+#              #
-#    Updated: 2022/10/21 08:54:47 by ebennace         ###   ########.fr        #
+#    Updated: 2022/10/21 11:32:16 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = philosopher
 # === File && Header === #
 SRCS		= 	main.c \
 				source/data_struct/chained.c \
+				source/env/check_death.c \
 				source/env/time.c \
 				source/execution/routine.c \
 				source/free/free_all.c \

@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:36:11 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 11:20:30 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:33:25 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void philo_die_or_eat(t_philo *philo)
             printf("[%ld] philo [%d] eat timer :[%ld]\n", 
                 get_time_pass(philo->times->start_time, get_actual_time()),
                 philo->num,
-                get_time_pass(philo->times->last_eat_time , get_actual_time()));
+                get_time_pass(philo->last_eat_time , get_actual_time()));
             save_last_eat_time(philo);
             philo->env->count_philo_meal += 1;
             change_state(philo, EAT);

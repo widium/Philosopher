@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   eat.c                                              :+:      :+:    :+:   */
+/*   check_death.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 11:50:43 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 12:16:55 by ebennace         ###   ########.fr       */
+/*   Created: 2022/10/21 11:25:16 by ebennace          #+#    #+#             */
+/*   Updated: 2022/10/21 11:31:55 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../header/philosopher.h"
 
-int no_more_time_to_eat(t_philo *philo)
-{
-    if (get_time_pass(philo->last_eat_time, get_actual_time())
-        >= philo->times->die_time)
-        return (1);
-    return (0);
-}
+// void check_death(t_env *env)
+// {
+//     t_philo *philo;
 
-void save_last_eat_time(t_philo *philo)
-{
-    philo->last_eat_time = get_actual_time();
-}
+//     philo = get_first_philo(env);
+//     while (1)
+//     {
+//         if (philo_is_dead(philo))
+//             break;
+//         philo = philo->next;
+//     }
+    
+// }
