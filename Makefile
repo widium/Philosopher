@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:56:37 by ebennace          #+#    #+#              #
-#    Updated: 2022/10/23 18:42:54 by ebennace         ###   ########.fr        #
+#    Updated: 2022/10/23 18:49:19 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCS		= 	main.c \
 				source/env/get.c \
 				source/env/time.c \
 				source/env/convert_time.c \
+				source/env/utils_libft.c \
 				source/execution/execution.c \
 				source/execution/supervisor.c \
 				source/init/create.c \
@@ -42,7 +43,6 @@ TEMPLATE = source/header/header.txt
 
 # ==== Execute ==== #
 EXE = @./$(NAME)
-LIBFT = source/libft/libft.a
 
 # ==== Debug && Leak ==== #
 SANITIZE 		= -fsanitize=address
@@ -69,8 +69,6 @@ MAKE			= make -s
 $(NAME) : 	    $(OBJS)
 				@echo "==== Create all .o ===="
 				@echo "==== Compiling all .c ===="
-				@echo "==== Compiling libft ===="
-				@$(MAKE) -C source/libft
 				@echo "==== Compiling Philosopher ===="
 				@$(CC) $(OBJS) $(FLAGS) $(LIBFT) -o $(NAME)
 				@cat "$(TEMPLATE)"		
@@ -78,13 +76,10 @@ $(NAME) : 	    $(OBJS)
 all : 	 $(NAME)
 
 clean :
-				@echo "==== Remove all Libft .o ===="
-				@$(MAKE) clean -C source/libft
 				@echo "==== Remove all Philosopher .o ===="
 				@$(RM_FILE) $(OBJS)
 
 fclean : clean
-				@$(MAKE) fclean -C source/libft
 				@$(RM_FILE) $(NAME)
 
 debug : 		$(OBJS)

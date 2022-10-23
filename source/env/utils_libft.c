@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   utils_libft.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 15:06:59 by ebennace          #+#    #+#             */
-/*   Updated: 2022/06/20 15:29:04 by ebennace         ###   ########.fr       */
+/*   Created: 2022/10/23 18:49:23 by ebennace          #+#    #+#             */
+/*   Updated: 2022/10/23 18:50:16 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+# include "../header/philosopher.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t size )
+int	ft_atoi(const char *str)
 {
 	int	i;
+	int	res;
+	int	nv;
 
+	nv = 1;
+	res = 0;
 	i = 0;
-	if (!src && !dest)
-		return (NULL);
-	while (i < (int)size)
+	while (str[i] == 32 || (str[i] >= 8 && str[i] <= 13))
+		i++;
+	if (str[i] == 45)
 	{
-		((char *)dest)[i] = ((char *)src)[i];
+		nv = -1;
 		i++;
 	}
-	return (dest);
+	else if (str[i] == 43)
+	{
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + str[i] - '0';
+		i++;
+	}
+	return (res * nv);
 }
-/*
-int main ()
-{
-	char dest[22] = "";
-	char src[] = "test basic du memcpy !";
-	size_t size  = 22;
-	printf("%s\n",ft_memcpy(dest,src,size));
-	printf("%s\n",memcpy(dest,src,size));
-}
-*/
