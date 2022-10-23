@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:36:11 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 16:39:08 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 18:12:05 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void philo_eat(t_philo *philo)
 {
     if (philo_can_use_two_fork(philo))
     {
-        if (philo_can_eat(philo))
+        if (philo_can_make_action(philo))
         {
             change_state(philo, EAT);
             print_philo_state(philo);
@@ -31,7 +31,7 @@ void philo_eat(t_philo *philo)
 
 void philo_sleep(t_philo *philo)
 {
-    if (there_are_not_dead_philos(philo->env))
+    if (philo_can_make_action(philo))
     {
         change_state(philo, SLEEP);
         print_philo_state(philo);
@@ -43,7 +43,7 @@ void philo_sleep(t_philo *philo)
 
 void philo_die(t_philo *philo)
 {
-    if (there_are_not_dead_philos(philo->env))
+    if (philo_can_make_action(philo))
     {
         philo->env->philo_dead += 1;
         change_state(philo, DEAD);

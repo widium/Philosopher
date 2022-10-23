@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:14:03 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 16:37:39 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 17:27:28 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_env *init_env(void)
     return (env);
 }
 
-t_times *init_times(int die_t, int eat_t, int sleep_t, int must_eat_t)
+t_times *init_times(int die_t, int eat_t, int sleep_t, int number_meals)
 {
     t_times *time;
 
@@ -56,7 +56,7 @@ t_times *init_times(int die_t, int eat_t, int sleep_t, int must_eat_t)
     time->die_time = die_t;
     time->eat_time = eat_t;
     time->sleep_time = sleep_t;
-    time->number_of_meals = must_eat_t;
+    time->number_of_meals = number_meals;
     return (time);
 }
 
