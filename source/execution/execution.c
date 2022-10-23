@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:34:10 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 16:23:49 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 18:00:55 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void execution(t_env *env)
         create_all_threads(env);
         supervisor(env);
     }
-    get_numbers_of_meals_all_philo(env);
     
 }
 
@@ -33,10 +32,13 @@ void *cycle(void *arg)
     create_delayed_start(philo);
     while (1)
     {   
-        if (there_are_dead_philos(philo->env))
-            break;
-        philo_eat(philo);
-        philo_sleep(philo);
+        if (philo_can_make_action(philo))
+        {
+            philo_eat(philo);
+            philo_sleep(philo); 
+        }
+        else
+            break ;
     }
     return (NULL);
 }

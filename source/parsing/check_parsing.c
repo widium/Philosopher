@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:58:59 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 17:02:45 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 17:27:49 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,25 @@ void convert_argv_to_millisecond(t_env *env, int argc, char **argv)
 	int die_t;
 	int sleep_t;
 	int eat_t;
-	int must_eat_t;
+	int number_meals;
 	
 	die_t = ft_atoi(argv[2]);
 	sleep_t = ft_atoi(argv[3]);
 	eat_t = ft_atoi(argv[4]);
 	if (argc == 6)
-		must_eat_t = ft_atoi(argv[5]);
+		number_meals = ft_atoi(argv[5]);
 	else
-		must_eat_t = -1;
-	if (have_error_convertion(die_t, sleep_t, eat_t, must_eat_t))
+		number_meals = -1;
+	if (have_error_convertion(die_t, sleep_t, eat_t, number_meals))
 		env->error_parsing++;
 	else 
-		env->times = init_times(die_t, eat_t, sleep_t, must_eat_t);
+		env->times = init_times(die_t, eat_t, sleep_t, number_meals);
 }
 
-int have_error_convertion(int die_t, int sleep_t, int eat_t, int must_eat_t)
+int have_error_convertion(int die_t, int sleep_t, int eat_t, int number_meals)
 {
 	if (die_t == 0 || sleep_t == 0
-		|| eat_t == 0 || must_eat_t == 0)
+		|| eat_t == 0 || number_meals == 0)
 		return (1);
 	return (0);
 }
