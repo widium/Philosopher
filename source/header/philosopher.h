@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 15:11:51 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 16:41:56 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,6 @@ int is_last_philo(t_philo *philo);
 int philo_is_dead(t_philo *philo);
 int there_are_not_dead_philos(t_env *env);
 int there_are_dead_philos(t_env *env);
-int all_philo_have_eat(t_philo *philo);
-int all_philo_didnt_eat(t_philo *philo);
 
 t_philo *get_first_philo(t_env *env);
 
@@ -101,7 +99,6 @@ int philo_can_make_action(t_philo *philo);
 void philo_puts_down_fork(t_philo *philo);
 int philo_have_no_more_time_to_eat(t_philo *philo);
 int philo_have_time_to_eat(t_philo *philo);
-void check_all_philos_meals_counter(t_philo *philo);
 
 void reset_eat_timer(t_philo *philo);
 

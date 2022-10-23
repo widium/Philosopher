@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 11:50:43 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 17:56:04 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 16:39:03 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,13 @@ void reset_eat_timer(t_philo *philo)
     philo->last_eat_time = get_actual_time();
 }
 
-void check_all_philos_meals_counter(t_philo *philo)
-{
-    if (philo->env->count_all_philos_meals == philo->env->nbr_philo)
-            philo->env->count_all_philos_meals = 0;
-}
+// void check_philo_meal_counter(t_philo *philo)
+// {
+//     if (philo->nbr_of_meal == philo->times->number_of_meals)
+//         philo->nbr_of_meal = 0;
+// }
 
 void update_meal_counter(t_philo *philo)
 {
-    philo->env->count_all_philos_meals += 1;
     philo->nbr_of_meal += 1;
 }
