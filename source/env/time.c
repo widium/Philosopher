@@ -26,30 +26,6 @@ long int    get_actual_time(void)
     return (time_ms);
 }
 
-long int milliseconde_to_microseconde(long int milliseconde)
-{
-    long int micro;
-
-    micro = milliseconde * 1000;
-    return (micro);
-}
-
-long int microseconde_to_milliseconde(long int micro)
-{
-    long int milli;
-
-    milli = micro / 1000;
-    return (milli);
-}
-
-long int seconde_to_milliseconde(long int seconde)
-{
-    long int milli;
-
-    milli = seconde * 1000;
-    return (milli);
-}
-
 void ms_sleep(long int milliseconde)
 {
     long int	start_time;

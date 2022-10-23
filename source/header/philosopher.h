@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 18:07:18 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 18:37:36 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include "../libft/libft.h"
 # include "class.h"
 
-int get_numbers_of_meals_all_philo(t_env *env);
 void protect_finish_thread(t_env *env);
 void dining_philosopher(int argc, char **argv);
 void cycle_for_single_philo(t_philo *philo);
@@ -78,8 +77,6 @@ int philo_is_pair(t_philo *philo);
 int philo_is_impair(t_philo *philo);
 int is_first_philo(t_env *env, t_philo *philo);
 int is_last_philo(t_philo *philo);
-int philo_is_dead(t_philo *philo);
-int there_are_dead_philos(t_env *env);
 int there_are_not_dead_philos(t_env *env);
 
 t_philo *get_first_philo(t_env *env);

@@ -6,11 +6,16 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:36:11 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 18:12:05 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 18:37:10 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/philosopher.h"
+
+void change_state(t_philo *philo, int state)
+{
+    philo->state = state;
+}
 
 void philo_eat(t_philo *philo)
 {
