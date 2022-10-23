@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 11:50:03 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 15:08:01 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:44:26 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int philo_can_use_fork(t_philo *philo, pthread_mutex_t *fork)
         return (0);
     if (pthread_mutex_lock(fork) == 0)
     {
-        change_state(philo, TAKE_FORK);
-        print_philo_state(philo);
-        // printf("[%ld] philo [%d] has taken a fork\n", 
-        //         get_time_pass(philo->times->start_time, get_actual_time()),
-        //         philo->num);
+        if (there_are_not_dead_philos(philo->env))
+        {
+            change_state(philo, TAKE_FORK);
+            print_philo_state(philo);
+        }
         return (1);
     }
     return (0);
