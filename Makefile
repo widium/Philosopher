@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:56:37 by ebennace          #+#    #+#              #
-#    Updated: 2022/10/21 16:40:28 by ebennace         ###   ########.fr        #
+#    Updated: 2022/10/23 18:42:54 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,13 @@ NAME = philosopher
 # === File && Header === #
 SRCS		= 	main.c \
 				source/data_struct/chained.c \
+				source/data_struct/free_all.c \
 				source/env/dining.c \
-				source/env/check_death.c \
+				source/env/get.c \
 				source/env/time.c \
+				source/env/convert_time.c \
 				source/execution/execution.c \
-				source/free/free_all.c \
-				source/get/get_philo.c \
+				source/execution/supervisor.c \
 				source/init/create.c \
 				source/init/init.c \
 				source/init/generate.c \
@@ -32,7 +33,6 @@ SRCS		= 	main.c \
 				source/state/fork.c \
 				source/state/eat.c \
 				source/state/state.c \
-				source/thread/init_thread.c \
 				source/verbose/verbose_philo.c \
 				source/verbose/verbose_env.c \
 				source/verbose/verbose_state.c \

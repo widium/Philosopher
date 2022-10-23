@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:50:43 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 17:55:39 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 18:36:02 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,17 @@ int is_last_philo(t_philo *philo)
     return (1);
 }
 
-int there_are_dead_philos(t_env *env)
+int all_philo_have_eat_enough(t_env *env)
 {
-    if (env->philo_dead > 0)
-        return (1);
-    return (0);
-} 
+    t_philo *philo;
 
-int there_are_not_dead_philos(t_env *env)
-{
-    if (env->philo_dead == 0)
-        return (1);
-    return (0);
-} 
+    philo = get_first_philo(env);
+    while (philo)
+    {
+        if (have_not_eat_enough(philo))
+            return (0);
+        philo = philo->next;
+    }
+    return (1);
+}
+
