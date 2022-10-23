@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:34:10 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 17:57:56 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 14:29:28 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,22 @@
 
 void execution(t_env *env)
 {
-    create_all_threads(env);
-    create_supervisor(env);
+    if (env->nbr_philo == 1)
+        cycle_for_single_philo(env->first_philo);
+    else 
+    {
+        create_all_threads(env);
+        supervisor(env);
+    }
+}
+
+void cycle_for_single_philo(t_philo *philo)
+{
+    change_state(philo, TAKE_FORK);
+    print_philo_state(philo);
+    ms_sleep(philo->times->die_time);
+    change_state(philo, DEAD);
+    print_philo_state(philo);
 }
 
 void *cycle(void *arg)
