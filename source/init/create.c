@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:42:00 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 18:34:59 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:41:30 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void create_supervisor(t_env *env)
     {
         if (philo_have_no_more_time_to_eat(philo))
         {
+            philo->env->philo_dead += 1;
             change_state(philo, DEAD);
             print_philo_state(philo);
             printf("nbr meal [%d]\n", philo->nbr_of_meal);
@@ -29,6 +30,19 @@ void create_supervisor(t_env *env)
         philo = philo->next;
         get_infinite_loop(env, &philo);
     }
+    finish_thread(env);
+    
+}
+
+void finish_thread(t_env *env)
+{
+    t_philo *philo;
+    philo = get_first_philo(env);
+    while (philo)
+    {
+        pthread_join(philo->thread, NULL);
+        philo = philo->next;
+    } 
 }
 
 int all_philo_have_not_eat_enough(t_env *env)

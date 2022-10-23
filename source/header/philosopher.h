@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 18:34:53 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:41:38 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include "../libft/libft.h"
 # include "class.h"
 
+void finish_thread(t_env *env);
 void dining_philosopher(int argc, char **argv);
 long int    get_actual_time(void);
 void *cycle(void *arg);
