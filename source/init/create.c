@@ -6,13 +6,13 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:42:00 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 11:41:30 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:46:06 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../header/philosopher.h"
 
-void create_supervisor(t_env *env)
+void supervisor(t_env *env)
 {
     t_philo *philo; 
 
@@ -30,11 +30,11 @@ void create_supervisor(t_env *env)
         philo = philo->next;
         get_infinite_loop(env, &philo);
     }
-    finish_thread(env);
+    protect_finish_thread(env);
     
 }
 
-void finish_thread(t_env *env)
+void protect_finish_thread(t_env *env)
 {
     t_philo *philo;
     philo = get_first_philo(env);

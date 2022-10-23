@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 11:41:38 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 14:27:58 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,16 @@
 # include "../libft/libft.h"
 # include "class.h"
 
-void finish_thread(t_env *env);
+void protect_finish_thread(t_env *env);
 void dining_philosopher(int argc, char **argv);
+void cycle_for_single_philo(t_philo *philo);
 long int    get_actual_time(void);
 void *cycle(void *arg);
 void execution(t_env *env);
 void* routine(void* arg) ;
 int	init_threads(int number);
 int	sum_array(int size);
-void create_supervisor(t_env *env);
+void supervisor(t_env *env);
 int all_philo_have_not_eat_enough(t_env *env);
 void create_delayed_start(t_philo *philo);
 void update_meal_counter(t_philo *philo);
