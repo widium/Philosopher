@@ -24,6 +24,7 @@ void dining_philosopher(int argc, char **argv)
 	{
 		print_env(env);
 		generate_philo(env);
+		// print_all_philo(env);
 		execution(env);
 		
 	}

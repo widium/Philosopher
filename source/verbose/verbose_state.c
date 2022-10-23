@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:58:04 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 15:08:59 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 16:05:21 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void print_philo_state(t_philo *philo)
 {
     printf("[%ld] philo [%d] [%s]\n",
-        get_time_pass(philo->last_eat_time, get_actual_time()),
+        get_time_pass(philo->times->start_time, get_actual_time()),
         philo->num,
         verbose_state(philo->state));
 }
@@ -32,5 +32,7 @@ char *verbose_state(int state)
         return ("dead");
     else if (state == TAKE_FORK)
         return ("has taken fork");
+    else if (state == PUT_DOWN_FORK)
+        return ("put down fork");
     return (NULL);
 }

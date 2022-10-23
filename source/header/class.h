@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:09:13 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 18:05:01 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 16:04:12 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # define THINK 2
 # define DEAD 3
 # define TAKE_FORK 4
+# define PUT_DOWN_FORK 5
 
 typedef struct s_times
 {

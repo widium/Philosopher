@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 11:50:03 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 11:44:26 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 16:12:56 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int philo_can_use_fork(t_philo *philo, pthread_mutex_t *fork)
         {
             change_state(philo, TAKE_FORK);
             print_philo_state(philo);
+            // printf("Fork number : [%p]\n", &fork);
         }
         return (1);
     }
@@ -39,5 +40,9 @@ int philo_can_use_two_fork(t_philo *philo)
 void philo_puts_down_fork(t_philo *philo)
 {
     pthread_mutex_unlock(&philo->fork);
+    change_state(philo, PUT_DOWN_FORK);
+    print_philo_state(philo);
     pthread_mutex_unlock(philo->next_fork);
+    change_state(philo, PUT_DOWN_FORK);
+    print_philo_state(philo);
 }
