@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:36:11 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 16:12:02 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 16:39:08 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void philo_eat(t_philo *philo)
 {
     if (philo_can_use_two_fork(philo))
     {
-    
         if (philo_can_eat(philo))
         {
             change_state(philo, EAT);
@@ -24,7 +23,6 @@ void philo_eat(t_philo *philo)
             reset_eat_timer(philo);
             update_meal_counter(philo);
             ms_sleep(philo->times->eat_time);
-            check_all_philos_meals_counter(philo);
         }
     }
     philo_puts_down_fork(philo);

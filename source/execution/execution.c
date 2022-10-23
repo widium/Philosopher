@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:34:10 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 15:07:43 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 16:23:49 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,6 @@ void execution(t_env *env)
     
 }
 
-void cycle_for_single_philo(t_philo *philo)
-{
-    change_state(philo, TAKE_FORK);
-    print_philo_state(philo);
-    ms_sleep(philo->times->die_time);
-    change_state(philo, DEAD);
-    print_philo_state(philo);
-}
-
 void *cycle(void *arg)
 {
     t_philo *philo;
@@ -49,4 +40,15 @@ void *cycle(void *arg)
     }
     return (NULL);
 }
+
+void cycle_for_single_philo(t_philo *philo)
+{
+    change_state(philo, TAKE_FORK);
+    print_philo_state(philo);
+    ms_sleep(philo->times->die_time);
+    change_state(philo, DEAD);
+    print_philo_state(philo);
+}
+
+
 

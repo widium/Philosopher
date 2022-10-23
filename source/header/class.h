@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:09:13 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 16:04:12 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 16:37:22 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ typedef	struct s_philo
 typedef struct s_env
 {
     int             philo_dead;
-    int             count_all_philos_meals;
     int             nbr_philo;
     int             error_parsing;
     t_times        *times;

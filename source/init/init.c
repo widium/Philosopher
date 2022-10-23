@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:14:03 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 18:05:01 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/23 16:37:39 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ t_env *init_env(void)
         return (NULL);
     env->error_parsing = 0;
     env->nbr_philo = -1;
-    env->count_all_philos_meals = 0;
     env->philo_dead = 0;
     env->times = NULL;
     env->first_philo = NULL;
