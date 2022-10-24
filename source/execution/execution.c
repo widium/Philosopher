@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:34:10 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 18:00:55 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/24 07:47:08 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void *cycle(void *arg)
         if (philo_can_make_action(philo))
         {
             philo_eat(philo);
-            philo_sleep(philo); 
+            philo_sleep(philo);
+            philo_think(philo);
         }
         else
             break ;

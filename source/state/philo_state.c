@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:36:11 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 18:37:10 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/24 07:36:28 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,14 @@ void philo_die(t_philo *philo)
         change_state(philo, DEAD);
         print_philo_state(philo);
     }
-    change_state(philo, DEAD);
+}
+
+void philo_think(t_philo *philo)
+{
+    if (philo_can_make_action(philo))
+    {
+        change_state(philo, THINK);
+        print_philo_state(philo);
+    }
 }
 

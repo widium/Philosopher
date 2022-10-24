@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:56:48 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 19:28:35 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/24 07:36:34 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void change_state(t_philo *philo, int state);
 void philo_eat(t_philo *philo);
 void philo_sleep(t_philo *philo);
 void philo_die(t_philo *philo);
+void philo_think(t_philo *philo);
 
 int philo_can_use_fork(t_philo *philo, pthread_mutex_t *fork);
 int philo_can_use_two_fork(t_philo *philo);

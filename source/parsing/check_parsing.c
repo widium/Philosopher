@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:58:59 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 18:43:40 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/24 07:52:15 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ void convert_argv_to_millisecond(t_env *env, int argc, char **argv)
 
 int have_error_convertion(int die_t, int sleep_t, int eat_t, int number_meals)
 {
-	if (die_t == 0 || sleep_t == 0
-		|| eat_t == 0 || number_meals == 0)
+	if (die_t <= 0 || sleep_t <= 0
+		|| eat_t <= 0 || number_meals <= 0)
 		return (1);
 	return (0);
 }

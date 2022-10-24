@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:32:41 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/21 18:05:01 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/24 07:53:40 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void print_env(t_env *env)
 void print_error_parsing(void)
 {
     printf("------ Error Parsing ------\n");
-    printf("the program must take 4 number arguments\n");
+    printf("the program must take 4 number > 0\n");
 	printf("--\n");
 	printf("number of philo argv[1] : int\n");
 	printf("--\n");
