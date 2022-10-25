@@ -6,11 +6,11 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:56:37 by ebennace          #+#    #+#              #
-#    Updated: 2022/10/24 12:12:36 by ebennace         ###   ########.fr        #
+#    Updated: 2022/10/25 07:29:00 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = philosopher
+NAME = philo
 
 # === File && Header === #
 SRCS		= 	main.c \

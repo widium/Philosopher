@@ -23,7 +23,7 @@
 |./philo 5 800 200 200				|personne ne meurt				|
 |./philo 5 800 200 200 2				|la simulation s'arrete quand chaque philo a mange 2 fois				|
 |./philo 4 410 200 200				|personne ne meurt				|
-|./philo 4 310 200 200				|un philo meurt				|
+|./philo 4 310 200 200				|un philo meurt	entre 310 et 312 ms			|
 |./philo 4 0 200 200				|argument invalide				|
 |./philo 4 -500 200 200				|argument invalide				|
 |./philo 4 2147483647 200 200				|personne ne meurt				|
