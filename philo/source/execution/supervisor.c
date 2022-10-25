@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:32:46 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/24 14:31:46 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/25 14:56:44 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	supervisor(t_table *table)
 	philo = get_first_philo(table);
 	while (1)
 	{
-		if (philo_have_no_more_time_to_eat(philo) && have_not_eat_enough(philo))
+		if (philo_have_no_more_time_to_eat(philo))
 		{
 			philo_die(philo);
 			break ;

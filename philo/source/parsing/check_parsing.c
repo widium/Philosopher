@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:58:59 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/25 07:31:17 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/25 14:48:07 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,14 @@ void	convert_argv_to_millisecond(t_table *table, int argc, char **argv)
 	int	number_meals;
 
 	die_t = ft_atoi(argv[2]);
-	sleep_t = ft_atoi(argv[3]);
-	eat_t = ft_atoi(argv[4]);
+	eat_t = ft_atoi(argv[3]);
+	sleep_t = ft_atoi(argv[4]);
 	if (argc == 6)
+	{
 		number_meals = ft_atoi(argv[5]);
+		if (number_meals < 0)
+			table->error_parsing++;
+	}
 	else
 		number_meals = -1;
 	if (have_error_convertion(die_t, sleep_t, eat_t, number_meals))
