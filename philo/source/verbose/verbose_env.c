@@ -6,28 +6,28 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:32:41 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/24 07:53:40 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/24 14:36:34 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/philosopher.h"
 
-void print_env(t_env *env)
+void	print_env(t_table *table)
 {
-	printf("------ Env ------\n");
-	printf("number of philo : %d\n", env->nbr_philo);
-	printf("die time : %dms\n", env->times->die_time);
-	printf("sleep time : %dms\n", env->times->sleep_time);
-	printf("eat time : %dms\n", env->times->eat_time);
-    if (env->times->number_of_meals > 0)
-	    printf("number of meals : %d\n", env->times->number_of_meals);
+	printf("------ Table ------\n");
+	printf("number of philo : %d\n", table->nbr_philo);
+	printf("die time : %dms\n", table->times->die_time);
+	printf("sleep time : %dms\n", table->times->sleep_time);
+	printf("eat time : %dms\n", table->times->eat_time);
+	if (table->times->number_of_meals > 0)
+		printf("number of meals : %d\n", table->times->number_of_meals);
 	printf("----------------\n");
 }
 
-void print_error_parsing(void)
+void	print_error_parsing(void)
 {
-    printf("------ Error Parsing ------\n");
-    printf("the program must take 4 number > 0\n");
+	printf("------ Error Parsing ------\n");
+	printf("the program must take 4 number > 0\n");
 	printf("--\n");
 	printf("number of philo argv[1] : int\n");
 	printf("--\n");

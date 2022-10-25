@@ -6,32 +6,32 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:39:45 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 18:40:31 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/24 11:56:32 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../header/philosopher.h"
+#include "../header/philosopher.h"
 
-long int milliseconde_to_microseconde(long int milliseconde)
+long int	milliseconde_to_microseconde(long int milliseconde)
 {
-    long int micro;
+	long int	micro;
 
-    micro = milliseconde * 1000;
-    return (micro);
+	micro = milliseconde * 1000;
+	return (micro);
 }
 
-long int microseconde_to_milliseconde(long int micro)
+long int	microseconde_to_milliseconde(long int micro)
 {
-    long int milli;
+	long int	milli;
 
-    milli = micro / 1000;
-    return (milli);
+	milli = micro / 1000;
+	return (milli);
 }
 
-long int seconde_to_milliseconde(long int seconde)
+long int	seconde_to_milliseconde(long int seconde)
 {
-    long int milli;
+	long int	milli;
 
-    milli = seconde * 1000;
-    return (milli);
+	milli = seconde * 1000;
+	return (milli);
 }

@@ -6,11 +6,11 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:49:23 by ebennace          #+#    #+#             */
-/*   Updated: 2022/10/23 18:50:16 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/10/24 11:59:08 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../header/philosopher.h"
+#include "../header/philosopher.h"
 
 int	ft_atoi(const char *str)
 {

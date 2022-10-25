@@ -6,7 +6,7 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:56:37 by ebennace          #+#    #+#              #
-#    Updated: 2022/10/23 18:49:19 by ebennace         ###   ########.fr        #
+#    Updated: 2022/10/24 12:12:36 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,6 @@ SRCS		= 	main.c \
 				source/state/philo_state.c \
 				source/state/fork.c \
 				source/state/eat.c \
-				source/state/state.c \
 				source/verbose/verbose_philo.c \
 				source/verbose/verbose_env.c \
 				source/verbose/verbose_state.c \
