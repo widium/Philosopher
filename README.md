@@ -1,16 +1,16 @@
 # Philosopher
 ## Test
-- ### [Test](#test-cycle)
+- [Test](#test-cycle)
 ## Theorie
-- ### [Threads](#threads)
-- ### [Mutex](#mutex)
-- ### [Time](#time)
+- [Threads](#threads)
+- [Mutex](#mutex)
+- [Time](#time)
 
 ## Pratique
-- ### [Data Structure](#data-structure)
-- ### [Supervisor](#supervisor)
-- ### [Delayed Start](#delayed-start)
-- ### [Cycle of Philo](#cycle-of-philo)
+- [Data Structure](#data-structure)
+- [Supervisor](#supervisor)
+- [Delayed Start](#delayed-start)
+- [Cycle of Philo](#cycle-of-philo)
 ***
 ![](https://i.imgur.com/CMD7w60.png)
 ***
@@ -20,15 +20,18 @@
 | ---      | ---       |
 |./philo 1 200 200 200		   | philo 1 ne prend qu'une fourchette et meurt au bout de 200 ms          |
 |./philo 2 800 200 200				|personne ne meurt				|
+|./philo 1 800 200 200				|ne mange pas et ne meurt pas				|
 |./philo 5 800 200 200				|personne ne meurt				|
 |./philo 5 800 200 200 2				|la simulation s'arrete quand chaque philo a mange 2 fois				|
 |./philo 4 410 200 200				|personne ne meurt				|
 |./philo 4 310 200 200				|un philo meurt	entre 310 et 312 ms			|
 |./philo 4 0 200 200				|argument invalide				|
 |./philo 4 -500 200 200				|argument invalide				|
+|./philo 4 310 200 200 -1			| argument invalide |
 |./philo 4 2147483647 200 200				|personne ne meurt				|
 |./philo 4 214748364732 200 200				|argument invalide				|
 |./philo 4 200 210 200  				|un philo meurt, il faut afficher la mort avant 210 ms				|
+|./philo 4 310 200 100  				|un philo meurt|
 ***
 # Threads
 
@@ -366,7 +369,7 @@ A la fin de la loop on laisse finir les threads pour eviter un Dead-Lock , sans 
 philo = get_first_philo(table);
 while (1)
 {
-	if (philo_have_no_more_time_to_eat(philo) && have_not_eat_enough(philo))
+	if (philo_have_no_more_time_to_eat(philo))
 	{
 		philo_die(philo);
 		break ;
@@ -410,7 +413,7 @@ void	create_delayed_start(t_philo *philo)
 ~~~C
 int	philo_can_make_action(t_philo *philo)
 {
-	if (there_are_not_dead_philos(philo->table) && have_not_eat_enough(philo))
+	if (there_are_not_dead_philos(philo->table))
 		return (1);
 	return (0);
 }
