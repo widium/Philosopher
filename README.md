@@ -1,4 +1,6 @@
 # Philosopher
+## Test
+- ### [Test](#test-cycle)
 ## Theorie
 - ### [Threads](#threads)
 - ### [Mutex](#mutex)
@@ -11,6 +13,22 @@
 - ### [Cycle of Philo](#cycle-of-philo)
 ***
 ![](https://i.imgur.com/CMD7w60.png)
+***
+# Test Cycle 
+
+| test     | resultat attendu |
+| ---      | ---       |
+|./philo 1 200 200 200		   | philo 1 ne prend qu'une fourchette et meurt au bout de 200 ms          |
+|./philo 2 800 200 200				|personne ne meurt				|
+|./philo 5 800 200 200				|personne ne meurt				|
+|./philo 5 800 200 200 7				|la simulation s'arrete quand chaque philo a mange 7 fois				|
+|./philo 4 410 200 200				|personne ne meurt				|
+|./philo 4 310 200 200				|un philo meurt				|
+|./philo 4 0 200 200				|argument invalide				|
+|./philo 4 -500 200 200				|argument invalide				|
+|./philo 4 2147483647 200 200				|				|
+|./philo 4 214748364732 200 200				|argument invalide				|
+|./philo 4 200 210 200  				|n philo meurt, il faut afficher la mort avant 210 ms				|
 ***
 # Threads
 
